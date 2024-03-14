@@ -1,0 +1,8 @@
+---
+deployment:
+
+task:
+  - export DEPLOYPATH=/home/user/public.html/
+  - /bin/cp index.html $DEPLOYPATH
+  - /bin/co style.css $DEPLOYPATH
+  - /bin/cp -R img $DEPLOYPATH
