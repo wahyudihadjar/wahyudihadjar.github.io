@@ -48,7 +48,7 @@
     <section class="jumbotron text-center">
       <img src="img/wahyu.png" alt="Wahyudi" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Wahyudi</h1>
-      <p class="lead">Bismillah | Alhamdulillah</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -148,6 +148,72 @@
 
     <!-- Akhir Project -->
 
+    <!-- Galery -->
+
+    <section id="gallery">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Gallery</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/1.jpg" alt="Gambar 1" class="img-fluid galery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/2.jpg" alt="Gambar 2" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/3.jpg" alt="Gambar 3" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/4.jpg" alt="Gambar 4" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/5.jpg" alt="Gambar 5" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/6.jpg" alt="Gambar 6" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/7.jpg" alt="Gambar 7" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/8.jpg" alt="Gambar 8" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/9.jpg" alt="Gambar 9" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/10.jpg" alt="Gambar 10" class="img-fluid galery-img" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Gallery -->
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -199,10 +265,29 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+      const galleryImage = document.querySelectorAll(' .gallery-img');
+
+      galleryImage.forEach((img, i) => {
+        img.dataset.aos = 'fade-down';
+        img.dataset.aosDelay = i * 100;
+        img.datasetaosDuration = 1000;
+      });
+
       AOS.init({
         once: true,
         duration: 2000,
       });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 2, delay: 1.5, text: 'Bismillah | Alhamdulillah' });
+      gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', { duration: 1, x: 50, opacity: 0, Delay: 0.5, ease: 'back' });
     </script>
 
     <script>
